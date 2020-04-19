@@ -38,7 +38,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
+    //function comment here
     protected static function boot()
     {
         parent::boot();
@@ -53,17 +53,17 @@ class User extends Authenticatable
             }
         );
     }
-
+    //function comment here
     public function post()
     {
         return $this->hasMany(Post::class)->orderBy('created_at', 'DESC');
     }
-
+    //function comment here 
     public function following()
     {
         return $this->belongsToMany(Profile::class);
     }
-
+    //function comment here
     public function profile()
     {
         return $this->hasOne(Profile::class);
